@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author awarsyle
+ * @author Callum Beckford
  */
 @Entity
 @Table(name = "note")
