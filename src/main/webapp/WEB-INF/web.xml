@@ -4,6 +4,22 @@
         <filter-name>AuthenticationFilter</filter-name>
         <filter-class>ca.sait.securitydemo12.filters.AuthenticationFilter</filter-class>
     </filter>
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>filters.AdminFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>adminFilter</filter-name>
+        <filter-class>filters.adminFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>adminFilter</filter-name>
+        <servlet-name>AdminServlet</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <servlet-name>AdminServlet</servlet-name>
+    </filter-mapping>
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
         <servlet-name>AdminServlet</servlet-name>
