@@ -1,0 +1,12 @@
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\services\NoteService.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\dataaccess\NoteDB.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\servlets\NoteServlet.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\models\Role.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\models\User.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\servlets\LoginServlet.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\models\Note.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\dataaccess\UserDB.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\servlets\AdminServlet.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\dataaccess\DBUtil.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\ca\sait\lab8\services\AccountService.java
+C:\WinterSemester\Web CPRG352\Week 8\SecurityDemo12\lab8\src\main\java\filters\AuthenticationFilter.java
