@@ -43,8 +43,8 @@ public class AdminServlet extends HttpServlet {
 
         /* Stores info about user across more then one page request.
          * I belive this is where the Authenticationfilter is called 
+         * Get the user role
          */
-                //Get the user role
         int roleId = user.getRole().getRoleId();
         
         HttpSession session = request.getSession();

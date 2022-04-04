@@ -41,19 +41,21 @@ public class LoginServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
             return;
         }
-        
+
         /* Stores info about user across more then one page request.
          * I belive this is where the Authenticationfilter is called 
          */
         HttpSession session = request.getSession();
         session.setAttribute("email", email);
-        
+
         //This is the redirect based on the user information in the 
         if (user.getRole().getRoleId() == 1) {
+            session = request.getSession();
             response.sendRedirect("admin");
         } else {
             response.sendRedirect("notes");
         }
+
 
     }
 }

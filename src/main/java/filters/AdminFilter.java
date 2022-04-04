@@ -7,9 +7,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 
 /**
  *
@@ -24,7 +22,6 @@ public class AdminFilter implements Filter {
 
         // the servlet request that we are processing
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-
         HttpSession session = httpRequest.getSession();
         int roleID = (Integer) session.getAttribute("roleId");
 
@@ -41,7 +38,7 @@ public class AdminFilter implements Filter {
     }
 
     @Override
-    public void init(FilterConfig filterConfig) {
+    public void init(FilterConfig filterConfig) throws ServletException {
 
     }
 
