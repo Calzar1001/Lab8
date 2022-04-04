@@ -24,5 +24,38 @@ public class AdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        //Varibles to store user credientials 
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        //Returns a user from the DB based on credientials
+        AccountService as = new AccountService();
+        User user = as.login(email, password);
+
+        // If no assisicoitaed user in the DB then send user back to the login page.
+        if (user == null) {
+            getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+            return;
+        }
+
+        /* Stores info about user across more then one page request.
+         * I belive this is where the Authenticationfilter is called 
+         */
+        HttpSession session = request.getSession();
+        session.setAttribute("email", email);
+
+        //This is the redirect based on the user information in the 
+        if (user.getRole().getRoleId() == 1) {
+            session = request.getSession();
+            //send the role id to the admin filter
+            response.sendRedirect("admin");
+            //retrive the user id
+            int roleID = user.getRole().getRoleId();
+            String roleString = Integer.toString(roleID);
+            // set the session data to the role id
+            session.setAttribute("roleString", roleString);
+        } else {
+            response.sendRedirect("notes");
+        }
     }
 }

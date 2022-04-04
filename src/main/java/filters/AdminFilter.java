@@ -23,8 +23,13 @@ public class AdminFilter implements Filter {
         HttpSession session = httpRequest.getSession();
         String roleIDString = (String) session.getAttribute("roleString");
 
-        //error to here  with int string conversion????
-        // Might be empty
+        if (roleIDString == null) {
+            HttpServletResponse httpResponse = (HttpServletResponse) response;
+            httpResponse.sendRedirect("login");
+            return;
+        }
+
+        //get roleId from the login servlet
         int roleID = Integer.parseInt(roleIDString);
 
         //check if the user is logged in as admin or not
