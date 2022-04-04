@@ -51,11 +51,16 @@ public class LoginServlet extends HttpServlet {
         //This is the redirect based on the user information in the 
         if (user.getRole().getRoleId() == 1) {
             session = request.getSession();
+            //send the role id to the admin filter
             response.sendRedirect("admin");
+            //retrive the user id
+            int roleID = user.getRole().getRoleId();
+            String roleString = Integer.toString(roleID);
+            // set the session data to the role id
+            session.setAttribute("roleID", roleID);
         } else {
             response.sendRedirect("notes");
         }
-
 
     }
 }
