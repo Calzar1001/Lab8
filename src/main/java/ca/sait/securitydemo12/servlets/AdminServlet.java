@@ -16,7 +16,7 @@ public class AdminServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
 
     }
 

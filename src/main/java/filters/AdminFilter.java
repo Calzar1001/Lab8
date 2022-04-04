@@ -21,23 +21,22 @@ public class AdminFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpSession session = httpRequest.getSession();
-        String roleIDString = (String)session.getAttribute("roleIDString") ;
-        
+        String roleIDString = (String) session.getAttribute("roleString");
+
         //error to here  with int string conversion????
         // Might be empty
-        int roleID = Integer.valueOf(roleIDString);
+        int roleID = Integer.parseInt(roleIDString);
 
         //check if the user is logged in as admin or not
-        if (roleID == 1) {
+        if (roleID != 1) {
             HttpServletResponse httpResponse = (HttpServletResponse) response;
-            httpResponse.sendRedirect("admin");
+            httpResponse.sendRedirect("login");
             return;
         }
 
         chain.doFilter(request, response);
 
-        boolean here = true;
-
+        // code that is executed after the servlet
     }
 
     @Override

@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
             int roleID = user.getRole().getRoleId();
             String roleString = Integer.toString(roleID);
             // set the session data to the role id
-            session.setAttribute("roleID", roleID);
+            session.setAttribute("roleString", roleString);
         } else {
             response.sendRedirect("notes");
         }
