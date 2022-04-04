@@ -1,6 +1,7 @@
 package ca.sait.securitydemo12.services;
 
 import ca.sait.securitydemo12.dataaccess.UserDB;
+import ca.sait.securitydemo12.models.Role;
 import ca.sait.securitydemo12.models.User;
 
 public class AccountService {
@@ -17,5 +18,9 @@ public class AccountService {
         }
         
         return null;
+    }
+
+    public Role login(int roleId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

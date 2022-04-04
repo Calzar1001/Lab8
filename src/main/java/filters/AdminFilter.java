@@ -1,6 +1,5 @@
 package filters;
 
-import static ca.sait.securitydemo12.models.User_.role;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -23,28 +22,31 @@ public class AdminFilter implements Filter {
             FilterChain chain)
             throws IOException, ServletException {
 
-        // code that is executed before the servlet
+        // the servlet request that we are processing
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-        HttpServletResponse httpResponse = (HttpServletResponse) response;
-        HttpSession session = httpRequest.getSession();
-                
-        int roleId = (Integer)session.getAttribute("roleId");
 
-        // Checking if the user is an admin or not.
-        if (roleId != 1) {
+        HttpSession session = httpRequest.getSession();
+        int roleID = (Integer) session.getAttribute("roleId");
+
+        // Is user admin? 
+        //If this statment is true call doFilter
+        //is false redirect to login page
+        if (roleID != 1) {
+            HttpServletResponse httpResponse = (HttpServletResponse) response;
             httpResponse.sendRedirect("login");
             return;
         }
+
         chain.doFilter(request, response);
     }
 
     @Override
-    public void destroy() {
+    public void init(FilterConfig filterConfig) {
 
     }
 
     @Override
-    public void init(FilterConfig filterConfig) {
+    public void destroy() {
 
     }
 
